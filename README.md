@@ -55,15 +55,21 @@ After provisioning the RDS instance, you'll need to connect to it via the Bastio
 
 - **Connect to the Bastion Host**:
 
-    `ssh -i <bastion-host-key-pair> ec2-user@<bastion-host-public-ip>`
+    ```
+    ssh -i <bastion-host-key-pair> ec2-user@<bastion-host-public-ip>
+    ```
 
 - **Install the MySQL client on the Bastion Host**:
 
-    `sudo dnf install mariadb105`
+    ```
+    sudo dnf install mariadb105
+    ```
 
 - **Connect to the RDS instance**:
 
-    `mysql -h <rds-endpoint> -P 3306 -u admin -p`
+    ```
+    mysql -h <rds-endpoint> -P 3306 -u admin -p
+    ```
 
 - Once connected, create the necessary database and tables for your application.
 
@@ -73,15 +79,21 @@ You will need to upload the `.jar` file of your Java Spring application and the 
 
 - **From your local machine, upload the `.jar` file and key pair to the Bastion Host**:
 
-    `scp -i <bastion-host-key-pair> <instances-key-pair> <application-jar-file> ec2-user@<bastion-host-public-ip>:/home/ec2-user`
+    ```
+    scp -i <bastion-host-key-pair> <instances-key-pair> <application-jar-file> ec2-user@<bastion-host-public-ip>:/home/ec2-user
+    ```
 
 - **Connect to the Bastion Host**:
 
-    `ssh -i <bastion-host-key-pair> ec2-user@<bastion-host-public-ip>`
+    ```
+    ssh -i <bastion-host-key-pair> ec2-user@<bastion-host-public-ip>
+    ```
 
 - **Transfer the `.jar` file to one of the Auto Scaling Group instances**:
 
-    `scp -i <instances-key-pair> <application-jar-file> ec2-user@<private-instance-ip>:/home/ec2-user`
+    ```
+    scp -i <instances-key-pair> <application-jar-file> ec2-user@<private-instance-ip>:/home/ec2-user
+    ```
 
 - **SSH into the Auto Scaling Group instance and run the application**:
 
