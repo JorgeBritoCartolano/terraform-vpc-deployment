@@ -85,8 +85,10 @@ You will need to upload the `.jar` file of your Java Spring application and the 
 
 - **SSH into the Auto Scaling Group instance and run the application**:
 
-    `ssh -i <instances-key-pair> ec2-user@<private-instance-ip>`
-    `java -jar <application-jar-file>`
+    ```
+    ssh -i <instances-key-pair> ec2-user@<private-instance-ip>
+    java -jar <application-jar-file>
+    ```
 
 ## Conclusion
 
