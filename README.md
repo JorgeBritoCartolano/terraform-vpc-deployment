@@ -42,10 +42,12 @@ Ensure you have the following installed locally:
 
 First, clone the repository with the Terraform configurations and initialize the infrastructure setup:
 
-`git clone <your-terraform-repo-url>`
-`cd <terraform-directory>`
-`terraform init`
-`terraform apply`
+```
+git clone <your-terraform-repo-url>
+cd <terraform-directory>
+terraform init
+terraform apply
+```
 
 ### 2. Database Setup
 
